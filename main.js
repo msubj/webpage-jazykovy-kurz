@@ -9,10 +9,11 @@ function router(){
 }
 
 function hideOthers(){
-    if(!(window.location.hash) || window.location.hash ==='#domov' ) articles.forEach((article)=>article.style.display='block');
+    if(!(window.location.hash) || window.location.hash ==='#domov' ) articles.forEach((article)=>article.removeAttribute('style'));
     else {
         articles.forEach((article)=>article.style.display='none');
-        document.querySelector(window.location.hash).style.display='block';
+        document.querySelector(window.location.hash).removeAttribute('style');
+        document.querySelector(window.location.hash).style.backgroundColor="white";
     }
 
 }
