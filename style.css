@@ -30,9 +30,9 @@ header{
 
 header h1 {
     font-size: 4.2rem;
-    height: 25rem;
+    min-height: 25rem;
     padding:auto;
-    padding-top: 12rem ;
+    padding: 12rem 3rem 0 3rem;
     text-align: center;
     background-color: var(--main-bg-color);
     
@@ -102,38 +102,38 @@ main p, main li{
     margin-bottom: 1rem;
 }
 
+main article{
+    display: flex;
+    min-height: 100%;
+}
+
 
 /* domov */
 
 #domov {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 100%;
-    padding: 2rem 0;
+    padding: 2rem;
 }
-
-
 
 #domov section {
     flex: 1;
-    padding: 4rem 6rem 4rem 7rem;
-
-
+    padding: 2rem 4rem 2rem 5rem;
 }
 
 #domov section:first-child{
     border-right: 0.3rem solid #202020;
 }
 
+#domov p{
+    margin-bottom: 2rem;
+}
+
 /*profil*/
 
 
 #profil {
-    min-height: 100%;
     background-color: var(--main-bg-color);
-    display: flex;
     justify-content: center;
-    padding: 3rem 8rem;
+    padding: 4rem 2rem;
     align-items: flex-start;
 }
 
@@ -152,17 +152,44 @@ main p, main li{
 
 #profil img{
     border: 0.3rem double #202020;
-    max-width: 30%;
-    
+}
+
+#profil p:last-child{
+    margin-bottom: 2rem;
 }
 
 
 /*kontakt*/
 
 #kontakt {
-    min-height: 100%;
-    padding: 2rem;
+    padding: 4rem;
+    justify-content: center;
+    align-items: flex-start;
+ 
 }
+
+#kontakt section{
+   max-width:200rem;
+}
+
+#kontakt h2{
+    margin-bottom: 4rem;
+}
+
+#kontakt li{
+    margin-bottom: 2rem;
+}
+
+#kontakt h3, #kontakt address{
+    text-align: center;
+}
+
+#kontakt h3{
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+
 
 /* ##footer */
 
@@ -176,8 +203,23 @@ footer{
     color: white;
 }
 
-/*media query */
+/*##media query */
 
-@media (screen) {
-    
+@media screen and (max-width:55rem) {
+    main article {
+        flex-direction: column;
+    }
+
+    #domov section:first-child{
+        border-right: none;
+        border-bottom: 0.3rem solid #202020;
+    }
+
+    #profil img{
+        margin: auto;
+    }
+
+    #kontakt{
+        align-items: center;
+    }
 }
