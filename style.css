@@ -331,12 +331,15 @@ nav.fixed{
         border-radius: 1rem;
         margin: 0 2rem -0.4rem 2rem;
     }
-
-
-    .hamburger div{
+    
+    .hamburger{
+        display: inline-block;
+    }
+    .hamburger span{
        width: 2.4em;
        height: 0.3em;
        background-color: #202020;
+       display: block;
        margin: 0.3em;
     }
 
@@ -346,27 +349,25 @@ nav.fixed{
         outline: none;
     }
 
-    header nav button:hover .hamburger div, header nav button:focus .hamburger div {
+    header nav button:hover .hamburger span, header nav button:focus .hamburger span {
         background-color: var(--main-bg-color);
     }
 
-    .expanded .hamburger div:nth-child(2){
+    .expanded .hamburger span:nth-child(2){
         display: none;
     }
 
     .expanded .hamburger{
         position: relative;
-        margin-top: -0.5rem;
     }
 
-    .expanded .hamburger div:first-child{
+    .expanded .hamburger span:first-child{
         transform: rotate(45deg);
         position: absolute;
     }
 
-    .expanded .hamburger div:last-child{
+    .expanded .hamburger span:last-child{
         transform: rotate(-45deg);
-        position: absolute;
     }
 
 
