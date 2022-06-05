@@ -16,8 +16,14 @@ html{
 
   body {
       height: 100%;
-      
   }
+
+  .page-container{
+      height: 100%;
+      position: relative;
+  }
+
+
 
   /*font setup*/
 
@@ -30,7 +36,7 @@ header{
 
 header h1 {
     font-size: 4.2rem;
-    min-height: 25rem;
+    height: 25rem;
     padding: 8rem 3rem;
     text-align: center;
     background-color: var(--main-bg-color);
@@ -219,15 +225,47 @@ nav.fixed{
 
 
 @media  screen and  (max-height:45rem)  {
-    main, body, html, header, h1{
+   main,header,header h1 {
         height: auto;
+        min-height: auto;
     }
+
+    .page-container{
+        height: auto;
+        min-height: 100%;
+    }
+   
+    footer{
+        position: absolute;
+        bottom: 0;
+    }
+
+    main{
+        padding-bottom: 3rem;
+    }
+
 }
 
 @media screen and (max-width:55rem) {
-    main, body, html, header, h1{
+    main,header,header h1{
         height: auto;
+        min-height: auto;
     }
+
+    .page-container{
+        height: auto;
+        min-height: 100%;
+    }
+   
+    footer{
+        position: absolute;
+        bottom: 0;
+    }
+
+    main{
+        padding-bottom: 3rem;
+    }
+
 
     /* articles single-column layout */
     main article {
@@ -265,7 +303,7 @@ nav.fixed{
     }
     
     header h1{
-        padding: 8rem 3rem 0 3rem;
+        padding: 8rem 3rem 3rem 3rem;
     }
 
     header nav{

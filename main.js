@@ -41,12 +41,19 @@ const navbar = document.querySelector('nav');
 let navTop = navbar.offsetTop;
 
 
-window.addEventListener('resize',()=> {navTop = navbar.offsetTop;});
+window.addEventListener('resize',()=> {
+    navTop = navbar.offsetTop; 
+    if(navbar.classList.contains('fixed')) {
+        navbar.classList.remove('fixed');
+        navTop = navbar.offsetTop; 
+        stickyNav();
+    }
+});
 
 window.addEventListener('scroll',stickyNav);
 
 function stickyNav(evt){
-if( window.scrollY>=navTop) navbar.classList.add('fixed');
+if( window.scrollY>navTop) navbar.classList.add('fixed');
 else navbar.classList.remove('fixed');
 }
 
