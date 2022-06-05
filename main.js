@@ -2,6 +2,7 @@
 
 const links = document.querySelectorAll('nav a');
 const articles = document.querySelectorAll('article');
+const main = document.querySelector('main');
 
 function router(){
     for (const link of links){
@@ -24,7 +25,12 @@ function hideOthers(){
 
 }
 
-links.forEach((link)=> link.addEventListener('click', (e)=>{e.preventDefault(); window.location.hash=e.target.hash; window.scrollTo(0,0);}))
+links.forEach((link)=> link.addEventListener('click', (e)=>{
+    e.preventDefault(); 
+    window.location.hash=e.target.hash; 
+    window.scrollTo(0,0); 
+    main.scrollTo(0,0);
+    }))
 
 
 if(window.location.hash) {
@@ -39,6 +45,7 @@ window.addEventListener('hashchange', ()=>{router(); hideOthers();});
 // sticky navbar on small screensize
 
 const navbar = document.querySelector('nav'); 
+const navWrapper = document.querySelector('.nav-wrapper');
 
 let navTop = navbar.offsetTop;
 
@@ -55,10 +62,15 @@ window.addEventListener('resize',()=> {
 window.addEventListener('scroll',stickyNav);
 
 function stickyNav(evt){
-if( window.scrollY>navTop) navbar.classList.add('fixed');
-else navbar.classList.remove('fixed');
+if( window.scrollY>navTop) {
+    navWrapper.style.height = navbar.offsetHeight+'px';
+    navbar.classList.add('fixed');
 }
-
+else {
+    navbar.classList.remove('fixed');
+    navWrapper.removeAttribute('style');
+}
+}
 
 
 //burger-menu toggling
