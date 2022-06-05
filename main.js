@@ -5,7 +5,7 @@ const articles = document.querySelectorAll('article');
 
 function router(){
     for (const link of links){
-        if(link.hash===this.window.location.hash) link.classList.add('active');
+        if(link.hash===window.location.hash) link.classList.add('active');
         else link.classList.remove('active');
      }
 }
@@ -23,6 +23,8 @@ function hideOthers(){
     }
 
 }
+
+links.forEach((link)=> link.addEventListener('click', (e)=>{e.preventDefault(); window.location.hash=e.target.hash; window.scrollTo(0,0);}))
 
 
 if(window.location.hash) {
