@@ -1,4 +1,5 @@
 /* ##setup*/
+@import url('https://fonts.googleapis.com/css2?family=Charis+SIL:ital@0;1&family=Montserrat:wght@400;600;700&family=Shadows+Into+Light+Two&display=swap');
 
 html{
     box-sizing: border-box;
@@ -17,6 +18,8 @@ html{
 
   body {
       height: 100%;
+      color: #202020;
+      font-family: 'Charis SIL', serif;
   }
 
   .page-container{
@@ -24,11 +27,11 @@ html{
       position: relative;
   }
 
+  h1,h2,h3{
+    font-family:'Montserrat', sans-serif;
+  }
 
-
-  /*font setup*/
-
- /* ##header */
+/* ##header */
 
 header{
       background-color: var(--main-bg-color);
@@ -38,7 +41,7 @@ header{
 header h1 {
     font-size: 4.2rem;
     height: 25rem;
-    padding: 8rem 3rem;
+    padding: 10rem 3rem 8rem 3rem;
     text-align: center;
     background-color: var(--main-bg-color);
     
@@ -76,7 +79,6 @@ header nav a {
     text-align: center;
     height: 100%;
     border-radius: 1em;
-    padding-top: 0.6rem;
     border: 0.4rem solid var(--main-bg-color);
     margin-left:  -0.4rem;
 }
@@ -85,6 +87,7 @@ header nav a:hover, header nav a:focus {
     outline: none;
     border-color: var(--main-color);
     z-index: 1;
+    font-size: 2.4rem;
 }
 
 .active {
@@ -97,6 +100,7 @@ main {
     overflow: auto;
     font-size: 1.7rem;
     height: calc(100% - 34.5rem);
+    line-height: 1.5;
 }
 
 main h2 {
@@ -116,6 +120,19 @@ main p, main li{
 main article{
     display: flex;
     min-height: 100%;
+}
+
+main blockquote{
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+}
+main blockquote::before{
+    content: "„";
+}
+
+main blockquote::after{
+    content: "“";
 }
 
 
@@ -184,11 +201,12 @@ main article{
 }
 
 #kontakt h2{
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 #kontakt li{
     margin-bottom: 2rem;
+    list-style-position: inside;
 }
 
 #kontakt h3, #kontakt address{
@@ -228,7 +246,6 @@ nav.fixed{
 @media  screen and  (max-height:45rem)  {
    main,header,header h1 {
         height: auto;
-        min-height: auto;
     }
 
     .page-container{
@@ -250,7 +267,7 @@ nav.fixed{
 @media screen and (max-width:55rem) {
     main,header,header h1{
         height: auto;
-        min-height: auto;
+        /*min-height: fit-content;*/
     }
 
     .page-container{
@@ -263,7 +280,7 @@ nav.fixed{
         bottom: 0;
     }
 
-    main{
+     main{
         padding-bottom: 3rem;
     }
 
@@ -323,8 +340,8 @@ nav.fixed{
     
 
     header nav button{
-        height: 3.5em;
-        width: 3.5em;
+        height: 5rem;
+        width: 5rem;
         display: inline-block;
         padding: 0;
         background: var(--main-bg-color);
@@ -348,6 +365,8 @@ nav.fixed{
         cursor: pointer;
         background-color: var(--main-color);
         outline: none;
+        width: 5.5rem;
+        height: 5.5rem;
     }
 
     header nav button:hover .hamburger span, header nav button:focus .hamburger span {
